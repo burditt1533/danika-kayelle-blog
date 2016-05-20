@@ -1,0 +1,10 @@
+toolbar:
+  - styleselect | bold italic underline | undo redo | table | cut copy paste | alignleft  aligncenter  alignright | indent outdent |
+  - image | link | bullist numlist | hr | code | forecolor | backcolor | emoticons
+plugins:
+  - image
+  - link
+  - hr
+  - code
+  - textcolor
+  - emoticons

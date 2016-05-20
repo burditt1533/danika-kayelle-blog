@@ -1,0 +1,45 @@
+// Place all the styles related to the Blogs controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.site-container {
+    background: url(http://danikakayelle.com/wp-content/uploads/2015/09/stardust.png);
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+
+.all-posts{
+	background-color: white;
+	padding: 60px;
+
+	.posts-wrap{
+		margin-bottom: 30px;
+	}
+
+	#blog_title{
+		border: none;
+	    background: gray;
+	    padding: 10px;
+	    width: 100%;
+	    border-radius: 2px;
+	    color: white;
+	    font-size: 16px;
+	    margin-bottom: 20px;
+	}
+
+
+}
+
+#tag_cloud{
+	width: 400px;
+	line-height: 1.6em;
+	.s{font-size: 0.8em;}
+	.m{font-size: 1.2em;}
+	.l{font-size: 1.8em;}
+}
+
+header{
+	background: url(http://danikakayelle.com/wp-content/uploads/2015/02/dkayelle2.png) no-repeat left;
+	height: 350px;
+}
