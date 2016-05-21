@@ -5,13 +5,27 @@
 
 .site-container {
     background: url(http://danikakayelle.com/wp-content/uploads/2015/09/stardust.png);
-    background-attachment: fixed;
     min-height: 100vh;
 }
 
-.all-posts{
-	background-color: white;
-	padding: 60px;
+
+
+.navbar-default {
+    background-color: #3AC2E9;
+    border: none;
+
+}
+
+.posts-container{
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 28px 0px;
+    width: 64%;
+    color: white;
+
+    .post-image{
+		margin: 0 auto;
+		display: block;
+    }
 
 	.posts-wrap{
 		margin-bottom: 30px;
@@ -28,16 +42,67 @@
 	    margin-bottom: 20px;
 	}
 
+	.tags{
+		width: 100%;
+		background-color: rgba(255, 255, 255, 0.1);
+		padding: 5px 10px;
+		margin: 10px 5px;
+		border-radius: 5px;
+		color: #ED5124;
+
+		a{
+			color: #ED5124;
+		}
+	}
+
+
+	
+
+	button{
+		background-color: #5CB85C;
+		    border-color: #4cae4c;
+
+
+		&:hover{
+			background-color: #478C47;
+			    border-color: #4cae4c;
+		}
+	}
 
 }
 
-#tag_cloud{
-	width: 400px;
-	line-height: 1.6em;
-	.s{font-size: 0.8em;}
-	.m{font-size: 1.2em;}
-	.l{font-size: 1.8em;}
+.side_bar{
+
+	margin-left: 20px;
+	width: 34%;
+	color: white;
+	a{
+		color: white;
+	}
+
+
+    .about-the-author{
+	width: 100%;
 }
+
+
+
+	.side-bar-section{
+		background-color: rgba(255, 255, 255, 0.1);
+		padding: 20px;
+		margin-bottom: 20px;
+
+	}
+
+	#tag_cloud{
+		width: 100%;
+		line-height: 1.6em;
+		.s{font-size: 0.8em;}
+		.m{font-size: 1.2em;}
+		.l{font-size: 1.8em;}
+	}
+}
+
 
 header{
 	background: url(http://danikakayelle.com/wp-content/uploads/2015/02/dkayelle2.png) no-repeat left;
