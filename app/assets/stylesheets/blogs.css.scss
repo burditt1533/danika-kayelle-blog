@@ -16,6 +16,17 @@
 
 }
 
+#blog_title{
+		border: none;
+	    background: gray;
+	    padding: 10px;
+	    width: 100%;
+	    border-radius: 2px;
+	    color: white;
+	    font-size: 16px;
+	    margin-bottom: 20px;
+	}
+
 .posts-container{
     background-color: rgba(255, 255, 255, 0.1);
     padding: 28px 0px;
@@ -31,16 +42,7 @@
 		margin-bottom: 30px;
 	}
 
-	#blog_title{
-		border: none;
-	    background: gray;
-	    padding: 10px;
-	    width: 100%;
-	    border-radius: 2px;
-	    color: white;
-	    font-size: 16px;
-	    margin-bottom: 20px;
-	}
+	
 
 	.tags{
 		width: 100%;
