@@ -12,6 +12,8 @@ Webblog::Application.routes.draw do
   get '/photos', to: 'pages#photos'
   get '/videos', to: 'pages#videos'
 
+  post '/tinymce_assets' => 'tinymce_assets#create'
+
   root :to => "blogs#index"
 
   # The priority is based upon order of creation: first created -> highest priority.

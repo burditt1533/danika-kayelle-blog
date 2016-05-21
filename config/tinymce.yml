@@ -1,6 +1,6 @@
 toolbar:
   - styleselect | bold italic underline | undo redo | table | cut copy paste | alignleft  aligncenter  alignright | indent outdent |
-  - image | link | bullist numlist | hr | code | forecolor | backcolor | emoticons
+  - image | link | bullist numlist | hr | code | forecolor | backcolor | emoticons | uploadimage
 plugins:
   - image
   - link
@@ -8,3 +8,4 @@ plugins:
   - code
   - textcolor
   - emoticons
+  - uploadimage

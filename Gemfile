@@ -43,6 +43,9 @@ gem 'pg'
 
 gem 'aws-sdk', '< 2.0'
 
+gem 'tinymce-rails-imageupload', '~> 4.0.0.beta'
+
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
