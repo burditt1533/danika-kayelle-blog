@@ -41,7 +41,7 @@ gem 'acts-as-taggable-on'
 
 gem 'pg'
 
-gem 'aws-sdk'
+gem 'aws-sdk', '< 2.0'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
