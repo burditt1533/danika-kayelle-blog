@@ -12,6 +12,18 @@
   <%= @blog.content.html_safe %>
 </p>
 
+<p class="tags">
+	Tags: <%= raw @blog.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')%>
+</p>
+
+
+<%= link_to like_blog_path(@blog), method: :put, class: "btn btn-default" do %>
+
+	<span class="glyphicon glyphicon-heart">
+		<%= @blog.get_upvotes.size %>
+	</span>
+
+<% end %> 
 <%= link_to 'Edit', edit_blog_path(@blog) %> |
 <%= link_to 'Delete', blog_path(@blog), method: :delete, data: { confirm: 'Are you sure?' } %> |
 <%= link_to 'Back', blogs_path %>

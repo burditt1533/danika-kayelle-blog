@@ -45,6 +45,10 @@ gem 'aws-sdk', '< 2.0'
 
 gem 'tinymce-rails-imageupload', '~> 4.0.0.beta'
 
+gem 'acts_as_votable', '~> 0.10.0'
+
+gem 'photoswipe-rails', '~> 4.1', '>= 4.1.1'
+
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

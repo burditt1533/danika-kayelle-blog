@@ -2,6 +2,9 @@ Webblog::Application.routes.draw do
   devise_for :users
   resources :blogs do
     resources :comments
+    member do
+      put 'like', to: 'blogs#upvote'
+    end
   end
 
   resources :home, only: [:index]

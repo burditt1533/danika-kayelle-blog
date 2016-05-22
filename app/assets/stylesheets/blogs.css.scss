@@ -14,6 +14,24 @@
     background-color: #3AC2E9;
     border: none;
 
+    .navbar-nav{
+		margin: 0 auto;
+		width: 100%;
+		max-width: 379px;
+		float: none;
+
+		li{
+
+			a{
+				color: red;
+
+				&:hover{
+					color:white;
+				}
+			}
+		}
+    }
+
 }
 
 #blog_title{
@@ -111,6 +129,6 @@
 
 
 header{
-	background: url(http://danikakayelle.com/wp-content/uploads/2015/02/dkayelle2.png) no-repeat left;
+	background: url(http://danikakayelle.com/wp-content/uploads/2015/02/dkayelle2.png) no-repeat center;
 	height: 350px;
 }
