@@ -1,0 +1,66 @@
+
+  <div class="posts-wrap clearfix">
+    <% imgIDs = @title.css("wp|postmeta wp|meta_key:contains('thumbnail_id') ~ wp|meta_value").try(:text) %>
+
+    <% postId = params[:post_id] %>
+
+    <% if imgIDs != "" %>
+      <div class="col-xs-12">
+        <%= link_to 'old_blogs'  do %>
+          <%= image_tag @image.xpath(".//post_id[text() = '" + imgIDs + "']/following-sibling::attachment_url").text, class: 'post-image' %>
+        <% end %> 
+      </div>
+    <% else %> 
+     <div class="col-xs-12">
+        <%= link_to 'blog'  do %>
+          <%= image_tag '', class: 'post-image', style: 'display: none;' %>
+        <% end %> 
+      </div>
+    <% end %> 
+
+      <div class="col-sm-12">
+        <div class="col-sm-12" style="text-align: center;">
+          <h3 class="blog-title"><%= @title.xpath("wp:post_id[text() = #{postId} ]/preceding-sibling::title").text %></h3>
+          <%= @title.xpath("wp:post_id[text() = #{postId} ]/following-sibling::wp:post_date").text.to_datetime.strftime("%B %d, %Y ") %>
+            /by <%= User.last.first_name %><%= User.last.last_name %>
+        </div>
+        <div class="col-xs-12"><%= @title.xpath("wp:post_id[text() = #{postId} ]/preceding-sibling::content:encoded").text.html_safe %></div>
+      </div>
+
+      <hr>
+      
+      <% if user_signed_in? or false %>
+        <div class="col-xs-12">
+          <%= link_to 'old_blogs'  do %>
+            <button type="button" class="btn btn-primary">Read More</button>
+          <% end %>
+
+          <%= link_to 'edit_blog_path(blog)' do %>
+            <button type="button" class="btn btn-primary">Edit</button>
+          <% end %>
+
+          <%= link_to 'blog', method: :delete, data: { confirm: 'Are you sure?' }  do %>
+            <button type="button" class="btn btn-primary">Delete</button>
+          <% end %>
+
+          <p class="tags">
+            /Tagged With: in 
+            <% @title.xpath("wp:post_id[text() = #{postId} ]/following-sibling::category").each do |tag| %>
+              <a href=""><%= tag.text %></a>,
+            <% end %>
+          </p>
+          
+        </div>
+
+    <% end %>
+
+    <h3>Comments</h3>
+		<%= @title.xpath("wp:post_id[text() = #{postId} ]/following-sibling::wp:comment").each do |comment| %>
+
+			<p> <%= comment.xpath("wp:comment_author").text %> </p>
+			<p> <%= comment.xpath("wp:comment_date").text.to_datetime.strftime("%B %d, %Y ") %> </p>
+			<p> <%= comment.xpath("wp:comment_content").text %> </p>
+		<% end %>
+
+
+  </div>
