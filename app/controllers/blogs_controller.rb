@@ -6,12 +6,26 @@ class BlogsController < ApplicationController
   # GET /blogs
   # GET /blogs.json
   def index
+    # require 'json'
     if params[:tag]
       @blogs = Blog.all.tagged_with(params[:tag])
     else
-      @blogs = Blog.all
+      @blogs = Blog.paginate(:page => params[:page]).per_page(10).order('created_at DESC')
+      @docs = Nokogiri::XML(File.open("app/assets/javascripts/danika_blog.xml"))
+      @images = Nokogiri::XML(File.open("app/assets/javascripts/danika_blog_images.xml"))
+
+      @image = @images.css("item")
+      @title = @docs.xpath("//item")
     end
 
+  end
+
+  def old_blogs
+      @docs = Nokogiri::XML(File.open("app/assets/javascripts/danika_blog.xml"))
+      @images = Nokogiri::XML(File.open("app/assets/javascripts/danika_blog_images.xml"))
+
+      @image = @images.css("item")
+      @title = @docs.xpath("//item")
   end
 
   # GET /blogs/1

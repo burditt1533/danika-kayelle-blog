@@ -49,6 +49,14 @@ gem 'acts_as_votable', '~> 0.10.0'
 
 gem 'photoswipe-rails', '~> 4.1', '>= 4.1.1'
 
+gem 'nokogiri'
+
+gem "json"
+
+gem 'truncate_html'
+
+gem 'will_paginate'
+
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

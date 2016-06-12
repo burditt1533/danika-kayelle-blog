@@ -5,7 +5,9 @@ Webblog::Application.routes.draw do
     member do
       put 'like', to: 'blogs#upvote'
     end
+    
   end
+  get '/old_blogs', to: 'blogs#old_blogs'
 
   resources :home, only: [:index]
 

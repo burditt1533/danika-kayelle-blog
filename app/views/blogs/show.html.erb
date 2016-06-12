@@ -9,7 +9,7 @@
 
 <p>
   <strong>Content:</strong>
-  <%= @blog.content.html_safe %>
+  <%= simple_format(@blog.content.html_safe) %>
 </p>
 
 <p class="tags">
