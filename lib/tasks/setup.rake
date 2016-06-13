@@ -10,12 +10,12 @@ task setup: :environment do
 	title.each do |blog|  
 
 		imgIDs = blog.css("wp|postmeta wp|meta_key:contains('thumbnail_id') ~ wp|meta_value").try(:text)
-		staticImage =  "/assets/blog_images/" + image.xpath(".//post_id[text() = '" + imgIDs + "']/following-sibling::attachment_url").text.split('/').last.to_s
+		staticImage =  "https://s3.amazonaws.com/danika-kayelle/blog_images/" + image.xpath(".//post_id[text() = '" + imgIDs + "']/following-sibling::attachment_url").text.split('/').last.to_s
 
 		the_blog = Blog.create! title: blog.xpath("title").text, 
 					 content: blog.xpath("content:encoded").text, 
 					 created_at: blog.xpath("wp:post_date").text.to_datetime, 
-					 static_image: staticImage == "/assets/blog_images/" ? "" : staticImage
+					 static_image: staticImage == "https://s3.amazonaws.com/danika-kayelle/blog_images/" ? "" : staticImage
 
 					 puts blog.xpath("title").text
 					 
