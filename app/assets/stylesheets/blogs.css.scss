@@ -17,9 +17,22 @@
 
 
 .site-container {
-    background: url(http://danikakayelle.com/wp-content/uploads/2015/09/stardust.png);
-    min-height: 100vh;
+    // background: url(http://danikakayelle.com/wp-content/uploads/2015/09/stardust.png);
+    // background: url(https://newevolutiondesigns.com/images/freebies/colorful-background-13.jpg);
+    // background-attachment: fixed;
+  //   @include clearfix;
+  // border-top: 10px solid rgba(255, 255, 255, .46);
+  // background-color: white;
+  // background: url('https://newevolutiondesigns.com/images/freebies/colorful-background-13.jpg') no-repeat center center;
+  // background-attachment: fixed;
+  // background-size: cover;
+  // padding-bottom: 4em;
+
+  .container{
+  	width: 100%;
+  }
 }
+
 
 
 
@@ -59,21 +72,29 @@
     padding: 10px;
     width: 100%;
     border-radius: 2px;
-    color: white;
+    // color: white;
     font-size: 16px;
     margin-bottom: 20px;
+}
+
+.pagination {
+    display: block;
+    padding-left: 0;
+    margin: 20px 0;
+    border-radius: 4px;
+    clear: both;
 }
 
 .posts-container{
     background-color: rgba(255, 255, 255, 0.1);
     padding: 28px 0px;
-    width: 64%;
-    color: white;
+    width: 100%;
+    // color: white;
 
     .blog-title{
     	text-align: center;
     	font-weight: 600;
-	    color: #FFF;
+	    // color: #FFF;
 	    font-family: tangerine;
 	    font-size: 44px;
 	    border-bottom: 1px solid #3AC2E9 !important;
@@ -88,7 +109,11 @@
     }
 
 	.posts-wrap{
-		margin-bottom: 30px;
+		border: 1px solid #006F8C;
+    margin: 8px;
+    width: 28%;
+    padding: 30px;
+    background: #3AC2E9;
 	}
 
 	

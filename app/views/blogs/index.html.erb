@@ -5,7 +5,7 @@
 <% if false %>
 
   <% @title.each do |blog|  %>
-    <div class="posts-wrap clearfix">
+    <div class="posts-wrap col-md-6 clearfix">
       <% imgIDs = blog.css("wp|postmeta wp|meta_key:contains('thumbnail_id') ~ wp|meta_value").try(:text) %>
 
       <% if imgIDs != "" %>
@@ -66,7 +66,7 @@
 <% if true %>
   <% @blogs.each do |blog| %>
 
-    <div class="posts-wrap clearfix">
+    <div class="posts-wrap col-md-4 clearfix">
 
           <% if blog.static_image.present? %>
             <div class="col-xs-12">
@@ -89,7 +89,7 @@
         <div class="col-sm-12" style="text-align: center;">
           <h3 class="blog-title"><%= blog.title %></h3>
         </div>
-        <div class="col-xs-12"><%= truncate_html(blog.content.html_safe, length: 600) %></div>
+        <div class="col-xs-12"><%= truncate_html(blog.content.html_safe, length: 300) %></div>
       </div>
 
     <% if user_signed_in? or true%>
@@ -98,20 +98,21 @@
             <button type="button" class="btn btn-primary">Read More</button>
           <% end %>
 
-          <%= link_to edit_blog_path(blog)  do %>
-            <button type="button" class="btn btn-primary">Edit</button>
-          <% end %>
+          
 
-          <%= link_to blog, method: :delete, data: { confirm: 'Are you sure?' }  do %>
-            <button type="button" class="btn btn-primary">Delete</button>
-          <% end %>
-
-          <p class="tags">
+          <p class="tags" style="display:none;">
             <%= blog.created_at.strftime("%B %d, %Y ")%>
             /by <%= User.last.first_name%><%= User.last.last_name%>
             /Tags: in <%= raw blog.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')%>
           </p>
           <hr>
+          <%= link_to edit_blog_path(blog)  do %>
+            <span>Edit</span>
+          <% end %>
+
+          <%= link_to blog, method: :delete, data: { confirm: 'Are you sure?' }  do %>
+            <span>Delete</span>
+          <% end %>
         </div>
 
     <% end %>
@@ -122,7 +123,7 @@
 
   </div>
 
-  <%= link_to 'blogs?page=' + ( + 1).to_s, data:{behavior: "loadmore-link"}  do  %>
+  <%= link_to 'blogs?page=' + ( + 1).to_s, data:{behavior: "loadmore-link"}, class: 'col-xs-12'  do  %>
       <button type="button" data-behavior="loadMore" class="btn btn-primary">Load More</button>
   <% end %>  
 
@@ -134,7 +135,6 @@
   
 
 
-<%= render "side_bar" %>
 
 <div class="clearfix"></div>
 
