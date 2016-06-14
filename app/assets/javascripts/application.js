@@ -16,6 +16,7 @@
 //= require_tree .
 //= require tinymce-jquery
 //= require photoswipe
+//= require mousewheel
 
 
 $("document:ready", function() {

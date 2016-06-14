@@ -13,4 +13,23 @@ $(function(){
 
 		$('[data-behavior=loadmore-link]').load(href + " [data-behavior=loadmore-link]")
 	})
+
+	
+
+
+    // Smooth Horizontal Scroll with Mouse
+    this.$container = $('[data-behavior=scroll-container]');
+    var self = this;
+    this.$container.on('mousewheel', function(event) {
+    	event.preventDefault()
+
+    	if (self.$container.scrollLeft() > 10){
+	        self.$container.scrollLeft( self.$container.scrollLeft() - ( event.deltaY * 20 ) );
+	        self.$container.scrollLeft( self.$container.scrollLeft() - ( event.deltaX * 10 ) );
+	    }else{
+	    	self.$container.scrollLeft( self.$container.scrollLeft() - ( event.deltaY * 2 ) );
+	        self.$container.scrollLeft( self.$container.scrollLeft() - ( event.deltaX * 0 ) );
+	    }
+    });
+
 })

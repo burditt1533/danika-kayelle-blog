@@ -15,18 +15,29 @@
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
 }
 
+.scroll-container{
+	overflow: hidden;
+}
+
+.image-container{
+	height: 180px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
 
 .site-container {
-    // background: url(http://danikakayelle.com/wp-content/uploads/2015/09/stardust.png);
-    // background: url(https://newevolutiondesigns.com/images/freebies/colorful-background-13.jpg);
-    // background-attachment: fixed;
-  //   @include clearfix;
-  // border-top: 10px solid rgba(255, 255, 255, .46);
-  // background-color: white;
-  // background: url('https://newevolutiondesigns.com/images/freebies/colorful-background-13.jpg') no-repeat center center;
-  // background-attachment: fixed;
-  // background-size: cover;
-  // padding-bottom: 4em;
+    border-top: 10px solid rgba(255, 255, 255, 0.46);
+    background-color: white;
+    background: url(http://danikakayelle.com/wp-content/uploads/2015/02/dkayelle2.png), url(https://newevolutiondesigns.com/images/freebies/colorful-background-13.jpg);
+    background-attachment: fixed, fixed;
+    background-size: 567px, cover;
+    background-position: top center, center;
+    background-repeat: no-repeat;
+    padding-bottom: 4em;
+    width: 100vw;
+    height: 100vh;
+
 
   .container{
   	width: 100%;
@@ -39,25 +50,40 @@
 .navbar-default {
     background-color: #3AC2E9;
     border: none;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    margin-bottom: 0;
+        z-index: 9999;
+    border-radius: 0;
+    height: 13vh;
+    // background: url(http://danikakayelle.com/wp-content/uploads/2015/02/dkayelle2.png), #3AC2E9 no-repeat center;
+    background: #3AC2E9 ;
+    background-repeat: no-repeat;
+    background-size: 282px;
+    background-position: left center;
 
     .navbar-nav{
 		margin: 0 auto;
 		width: 100%;
-		max-width: 491px;
+		max-width: 741px;
 		float: none;
+		display: flex;
+		justify-content: space-around;
+
 
 		li{
 
 			a{
-				color: #F00;
+				color: #FFF;
 			    text-transform: capitalize;
 			    font-family: 'Josefin Sans';
-			    font-size: 20px;
-			    padding: 21px;
+			    font-size: 38px;
+			    padding: 4vh;
 			    font-weight: lighter;
 
 				&:hover{
-					color:white;
+					color:red;
 				}
 			}
 		}
@@ -86,34 +112,58 @@
 }
 
 .posts-container{
-    background-color: rgba(255, 255, 255, 0.1);
+    // background-color: rgba(255, 255, 255, 0.1);
     padding: 28px 0px;
-    width: 100%;
+        width: 300vw;
     // color: white;
+
+    a{
+    	&:hover{
+			text-decoration: none !important;
+	    }
+
+    }
 
     .blog-title{
     	text-align: center;
     	font-weight: 600;
 	    // color: #FFF;
 	    font-family: tangerine;
-	    font-size: 44px;
+	    font-size: 37px;
 	    border-bottom: 1px solid #3AC2E9 !important;
-	    display: inline;
+	    display: block;
+	    margin-bottom: 10px;
+	    margin-top: 10px;
 
+	    
+
+    }
+
+    .read-more{
+		border: 1px solid white;
+		padding: 12px;
+		display: inline-block;
+		margin-top: 42px;
+		background: white;
+		color: #3AC2E9;
+
+		&:hover{
+			color: red;
+	    }
     }
 
     .post-image{
 		margin: 0 auto;
 		display: block;
-		width: 50%;
+		width: 100%;
     }
 
 	.posts-wrap{
-		border: 1px solid #006F8C;
-    margin: 8px;
-    width: 28%;
-    padding: 30px;
+    margin: 8px 40px;
+    width: 420px;
+    padding: 17px;
     background: #3AC2E9;
+    border-radius: 4px;
 	}
 
 	

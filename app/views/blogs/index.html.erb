@@ -69,7 +69,7 @@
     <div class="posts-wrap col-md-4 clearfix">
 
           <% if blog.static_image.present? %>
-            <div class="col-xs-12">
+            <div class="col-xs-12 image-container">
               <%= link_to blog  do %>
                 <%= image_tag blog.static_image, class: 'post-image' %>
               <% end %> 
@@ -87,15 +87,19 @@
 
       <div class="col-sm-12">
         <div class="col-sm-12" style="text-align: center;">
+        <%= link_to blog  do %>
           <h3 class="blog-title"><%= blog.title %></h3>
+          <% end %> 
         </div>
-        <div class="col-xs-12"><%= truncate_html(blog.content.html_safe, length: 300) %></div>
+        <% @content = truncate_html(blog.content.html_safe, length: 300) %>
+        <div class="col-xs-12" style="padding: 0;"><%=  strip_tags( @content) %></div>
+
       </div>
 
     <% if user_signed_in? or true%>
-        <div class="col-xs-12">
+        <div class="col-xs-12" style="text-align: right;">
           <%= link_to blog  do %>
-            <button type="button" class="btn btn-primary">Read More</button>
+            <p class="read-more">Read More...</p>
           <% end %>
 
           
@@ -105,14 +109,20 @@
             /by <%= User.last.first_name%><%= User.last.last_name%>
             /Tags: in <%= raw blog.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')%>
           </p>
-          <hr>
-          <%= link_to edit_blog_path(blog)  do %>
-            <span>Edit</span>
-          <% end %>
 
-          <%= link_to blog, method: :delete, data: { confirm: 'Are you sure?' }  do %>
-            <span>Delete</span>
-          <% end %>
+        <% if false %>
+
+          <div>
+            <%= link_to edit_blog_path(blog)  do %>
+              <span>Edit </span> |
+            <% end %>
+
+            <%= link_to blog, method: :delete, data: { confirm: 'Are you sure?' }  do %>
+              <span> Delete</span>
+            <% end %>
+          </div>
+        <% end %>
+
         </div>
 
     <% end %>
