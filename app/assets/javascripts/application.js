@@ -17,6 +17,9 @@
 //= require_tree .
 //= require tinymce-jquery
 //= require photoswipe
+//= require horizontal
+//= require plugins
+//= require sly.min
 
 
 
