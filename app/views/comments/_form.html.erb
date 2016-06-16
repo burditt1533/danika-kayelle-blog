@@ -1,15 +1,15 @@
+
 <%= form_for([@blog, @blog.comments.build]) do |f| %>
 	<p>
-		<%= f.label :name %>
-		<%= f.text_field :name %>
+
+		<%= f.text_field :name, placeholder: 'Name' %>
 	</p>
 
 	<p>
-		<%= f.label :body %>
-		<%= f.text_area :body %>
+		<%= f.text_area :body, placeholder: 'Leave a comment' %>
 	</p>
 
 	<p>
-		<%= f.submit %>
+		<%= f.submit :submit, id: 'submit-comment' %>
 	</p>
 <% end %>

@@ -15,10 +15,13 @@
 			<div class="container" style="padding: 0;top: 93px;position: relative;">
 			<!-- <header></header> -->
 
+
 			<nav class="navbar navbar-default">
 			  <div class="container-fluid">
 			    <!-- Brand and toggle get grouped for better mobile display -->
 			    <div class="navbar-header">
+			<span class="scroller"></span>
+
 			      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
 			        <span class="sr-only">Toggle navigation</span>
 			        <span class="icon-bar"></span>
@@ -58,15 +61,16 @@
 			  </div><!-- /.container-fluid -->
 			</nav>
 
-				<div class="scroll-container" data-behavior="scroll-container">
+				
 
 				<%= yield %>
 
-				</div>
+
 			</div>
 
 		</div>
 
  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+ <!-- <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script> -->
 	</body>
 </html>

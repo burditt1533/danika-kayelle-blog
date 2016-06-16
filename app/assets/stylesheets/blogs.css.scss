@@ -19,6 +19,13 @@
 	overflow: hidden;
 }
 
+.show-wrap{
+    background: #F9F9F9;
+    padding: 30px 50px 18vh;
+    width: 70%;
+    margin: 0 auto;
+}
+
 .image-container{
 	height: 180px;
     overflow: hidden;
@@ -36,11 +43,21 @@
     background-repeat: no-repeat;
     padding-bottom: 4em;
     width: 100vw;
-    height: 100vh;
 
 
   .container{
   	width: 100%;
+  }
+  .scroller{
+  	background: red;
+    width: 4%;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+    height: 4px;
+    position: fixed;
+    left: 0;
+    z-index: 999999999999999;
+    display: none;
   }
 }
 
@@ -91,17 +108,7 @@
 
 }
 
-#blog_title{
-	
-	border: none;
-    background: gray;
-    padding: 10px;
-    width: 100%;
-    border-radius: 2px;
-    // color: white;
-    font-size: 16px;
-    margin-bottom: 20px;
-}
+
 
 .pagination {
     display: block;
@@ -109,6 +116,57 @@
     margin: 20px 0;
     border-radius: 4px;
     clear: both;
+}
+
+
+    	.blog-show-title {
+    text-align: center;
+    font-weight: 100;
+    font-family: tangerine;
+    font-size: 55px;
+    border-bottom: 1px solid #3AC2E9 !important;
+    display: inline-table;
+    margin: -3px auto 10px;
+}
+
+.blog-show-image{
+	float: left;
+    margin-right: 30px;
+    margin-bottom: 20px;
+    width: 50%;
+}
+
+#comment_name{
+	    border-radius: 4px;
+    outline: none;
+    height: 50px;
+    width: 50%;
+    border: 1px solid #BDBDBD;
+    padding-left: 12px;
+}
+#comment_body{
+	border-radius: 4px;
+    outline: none;
+    height: 300px;
+    width: 50%;
+    border: 1px solid #BDBDBD;
+    padding-left: 12px;
+}
+
+#submit-comment{
+	    border-radius: 4px;
+    outline: none;
+    height: 53px;
+    color: white;
+    width: 210px;
+    border: 1px solid #3AC2E9;
+    background: #3AC2E9;
+    font-size: 26px;
+    font-weight: 100;
+}
+
+.comment-form{
+	text-align: center;
 }
 
 .posts-container{
@@ -127,7 +185,6 @@
     .blog-title{
     	text-align: center;
     	font-weight: 600;
-	    // color: #FFF;
 	    font-family: tangerine;
 	    font-size: 37px;
 	    border-bottom: 1px solid #3AC2E9 !important;
@@ -135,9 +192,9 @@
 	    margin-bottom: 10px;
 	    margin-top: 10px;
 
-	    
-
     }
+
+    
 
     .read-more{
 		border: 1px solid white;

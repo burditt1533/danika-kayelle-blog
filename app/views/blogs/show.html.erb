@@ -1,16 +1,31 @@
+<div class="show-wrap">
 <p id="notice"><%= notice %></p>
 
-<%= image_tag @blog.image.url(:medium) %>
+<% if @blog.static_image.present? %>
 
-<p>
-  <strong>Title:</strong>
-  <%= @blog.title %>
-</p>
+    <%= image_tag @blog.static_image, class: 'blog-show-image' %>
 
-<p>
-  <strong>Content:</strong>
+<% elsif @blog.static_image == "" && @blog.image.url(:medium) == ""  %>
+
+<% else %> 
+    <div class="col-xs-12">
+        <%= image_tag @blog.image.url(:medium), class: 'blog-show-image' %>
+    </div>
+<% end %> 
+
+<%= image_tag @blog.image.url(:medium), class: 'blog-show-image' %>
+
+  
+  
+
+
+<div class="show-content">
+
+<div style="text-align: center;">
+<h3 class="blog-show-title"><%= @blog.title %></h3>
+</div>
   <%= simple_format(@blog.content.html_safe) %>
-</p>
+</div>
 
 <p class="tags">
 	Tags: <%= raw @blog.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')%>
@@ -28,10 +43,15 @@
 <%= link_to 'Delete', blog_path(@blog), method: :delete, data: { confirm: 'Are you sure?' } %> |
 <%= link_to 'Back', blogs_path %>
 
-	<div id="comments">
+<hr>
+
+
+	<div class="comment-form">
 		<h2><%= @blog.comments.count %> Comments</h2>
 		<%= render @blog.comments %>
 
-		<h3>Add a comment:</h3>
+		<h3>Leave a Comment:</h3>
 		<%= render "comments/form" %>
 	</div>
+
+</div>

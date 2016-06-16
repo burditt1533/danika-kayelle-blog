@@ -13,10 +13,11 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require mousewheel
 //= require_tree .
 //= require tinymce-jquery
 //= require photoswipe
-//= require mousewheel
+
 
 
 $("document:ready", function() {
