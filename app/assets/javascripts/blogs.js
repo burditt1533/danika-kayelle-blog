@@ -12,7 +12,13 @@ $(function(){
 
 
 
+$('.image-container').mouseover(function(){
+	$(this).find('.image-overlay').addClass('in')
+})
 
+$('.image-container').mouseout(function(){
+	$(this).find('.image-overlay').removeClass('in')
+})
 
 	
 
@@ -21,6 +27,8 @@ $(function(){
 		var ready = true;
 		$('body').addClass('no-scroll')
 		$('.site-container').css('height', '100vh');
+
+
 
 
 		// $('.scroller').draggable({ 

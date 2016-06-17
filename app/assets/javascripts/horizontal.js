@@ -1,17 +1,22 @@
+
+
 jQuery(function($){
 	'use strict';
+
+if ($('#basic').length) {
 
 	// -------------------------------------------------------------
 	//   Basic Navigation
 	// -------------------------------------------------------------
 	(function () {
+		$('body').addClass('no-scroll')
 		var $frame  = $('#basic');
 		var $slidee = $frame.children('ul').eq(0);
 		var $wrap   = $frame.parent();
 
 		var options = {
     		horizontal: 1,
-			itemNav: 'centered',
+			itemNav: 'forceCentered',
 			smart: 1,
 			activateOn: 'click',
 			mouseDragging: 1,
@@ -46,6 +51,22 @@ jQuery(function($){
 	    	event.preventDefault()
 
 		})
+
+
+		$(document).keydown(function( event ) {
+
+		   event.preventDefault();
+		  if ( event.which == 39 ) {
+		   sly.next()
+		  }else if(event.which == 37) {
+		   sly.prev()
+		  }else if(event.which == 40) {
+		   sly.toStart()
+		  }else if(event.which == 38) {
+		   sly.toEnd()
+		  }
+
+		});
 
 
 
@@ -358,4 +379,7 @@ if (false)
 			$frame.sly('remove', -1);
 		});
 	}());
+
+
+}
 });
