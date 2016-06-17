@@ -1,0 +1,146 @@
+
+/* Example wrapper */
+.wrap {
+	position: relative;
+	margin: 3em 0;
+}
+
+/* Frame */
+.frame {
+	height: 480px;
+	line-height: 250px;
+	overflow: hidden;
+}
+.frame ul {
+	list-style: none;
+	// margin: 0;
+	// padding: 0;
+	height: 100%;
+	// font-size: 50px;
+}
+.frame ul li {
+	float: left;
+	width: 450px;
+	height: 100%;
+	margin: 0 190px 0 0;
+	padding: 20px 0;
+	background: #3AC2E9;
+	color: #000;
+	text-align: center;
+	cursor: pointer;
+	border-radius: 4px;
+}
+.frame ul li.active {
+	color: #fff;
+	background: #C10000;
+
+	.blog-title{
+		color: white;
+	}
+
+	.blog-content{
+		color: white;
+	}
+
+}
+
+/* Scrollbar */
+.scrollbar {
+	margin: 0 0 1em 0;
+	height: 2px;
+	background: #ccc;
+	line-height: 0;
+}
+.scrollbar .handle {
+	width: 100px;
+	height: 100%;
+	background: #FF0000;
+	cursor: pointer;
+}
+.scrollbar .handle .mousearea {
+	position: absolute;
+	top: -9px;
+	left: 0;
+	width: 100%;
+	height: 20px;
+}
+
+/* Pages */
+.pages {
+	list-style: none;
+	margin: 20px 44px;
+	padding: 0;
+	text-align: center;
+	display: inline-block;
+}
+.pages li {
+	display: inline-block;
+	width: 14px;
+	height: 14px;
+	margin: 0 4px;
+	text-indent: -999px;
+	border-radius: 10px;
+	cursor: pointer;
+	overflow: hidden;
+	background: #fff;
+	box-shadow: inset 0 0 0 1px rgba(0,0,0,.2);
+	top: 2px;
+    position: relative;
+}
+.pages li:hover {
+	background: #aaa;
+}
+.pages li.active {
+	background: #C10000;
+}
+
+.btn:active, .btn.active {
+    outline: 0;
+    background-image: none;
+    -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0);
+    box-shadow: inset 0 0px 5px rgba(0, 0, 0, 0);
+}
+
+.btn:hover{
+	color: white;
+}
+
+.direction-button{
+	color: white;
+
+	// &:hover{
+	// 	cursor: pointer;
+	// 	// color: #aaa;
+	// }
+	&:active{
+		color: #C10000;
+	}
+	&:focus{
+		color: #C10000;
+	}
+}
+
+.btn.disabled, .btn[disabled], fieldset[disabled]{
+	pointer-event: none;
+	color: white;
+	opacity: 0.45;
+}
+
+.btn.disabled:active{
+	color: white;
+}
+
+
+
+/* Controls */
+.controls { margin: 25px 0; text-align: center; }
+
+/* One Item Per Frame example*/
+.oneperframe { height: 300px; line-height: 300px; }
+.oneperframe ul li { width: 1140px; }
+.oneperframe ul li.active { background: #333; }
+
+/* Crazy example */
+.crazy ul li:nth-child(2n) { width: 100px; margin: 0 4px 0 20px; }
+.crazy ul li:nth-child(3n) { width: 300px; margin: 0 10px 0 5px; }
+.crazy ul li:nth-child(4n) { width: 400px; margin: 0 30px 0 2px; }

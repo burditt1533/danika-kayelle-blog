@@ -10,7 +10,7 @@ class BlogsController < ApplicationController
     if params[:tag]
       @blogs = Blog.all.tagged_with(params[:tag])
     else
-      @blogs = Blog.paginate(:page => params[:page]).per_page(10).order('created_at DESC')
+      @blogs = Blog.paginate(:page => params[:page]).per_page(20).order('created_at DESC')
       @docs = Nokogiri::XML(File.open("app/assets/javascripts/danika_blog.xml"))
       @images = Nokogiri::XML(File.open("app/assets/javascripts/danika_blog_images.xml"))
 
