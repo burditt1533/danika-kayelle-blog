@@ -24,6 +24,132 @@
     padding: 30px 50px 18vh;
     width: 70%;
     margin: 70px auto 250px;
+
+    .tags{
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.1);
+        padding: 5px 10px;
+        margin: 10px 5px;
+        border-radius: 5px;
+        color: #ED5124;
+
+        a{
+            color: #F9F9F9;
+            background: #3AC2E9;
+            padding: 9px 14px;
+            border-radius: 2px;
+            display: inline-block;
+            margin-top: 4px;
+            border: 1px solid #3AC2E9;
+            &:hover{
+                text-decoration: none;
+                background: #fff;
+                color: #3AC2E9;
+            }
+        }
+    }
+
+    .edit-blog{
+        float: right;
+    }
+
+    .show-content{
+        p{
+            line-height: 38px;
+            font-size: 15px;
+            margin-bottom: 30px;
+
+            @media (max-width: 768px) {
+                line-height: 27px;
+                font-size: 14px;
+                margin-bottom: 17px;
+                text-align: center;
+            }
+        }
+    }
+
+    .blog-show-title {
+    text-align: center;
+    font-weight: 100;
+    font-family: tangerine;
+    font-size: 55px;
+    border-bottom: 1px solid #3AC2E9 !important;
+    margin: -3px auto 10px;
+}
+
+.blog-show-image{
+    float: left;
+    margin-right: 30px;
+    margin-bottom: 20px;
+    width: 50%;
+    border: 8px solid #555555;
+}
+
+.leave-comment{
+
+    #comment_name{
+            border-radius: 4px;
+        outline: none;
+        height: 50px;
+        width: 80%;
+        border: 1px solid #BDBDBD;
+        padding-left: 12px;
+    }
+    #comment_body{
+        border-radius: 4px;
+        outline: none;
+        height: 300px;
+        width: 80%;
+        border: 1px solid #BDBDBD;
+        padding-left: 12px;
+    }
+
+    #submit-comment{
+            border-radius: 4px;
+        outline: none;
+        height: 53px;
+        color: white;
+        width: 210px;
+        border: 1px solid #3AC2E9;
+        background: #3AC2E9;
+        font-size: 21px;
+        font-weight: 100;
+    }
+
+    @media (max-width: 768px) {
+        #comment_name, #comment_body{
+            width: 100%;
+        }
+
+    }
+
+}
+
+.comment-form{
+        // text-align: center;
+    .leave-comment{
+        text-align: center;
+    }
+}
+
+    @media (max-width: 1500px) {
+        width: 90%;
+        
+    }
+    @media (max-width: 768px) {
+        width: 98%;
+        padding: 10px 18px 18vh;
+        margin: 0px auto 116px;
+
+        .blog-show-image {
+            width: 100%;
+            border: 3px solid #555555;
+        }
+        .tags{
+            text-align: center;
+        }
+        
+    }
 }
 
 .image-overlay{
@@ -59,15 +185,15 @@
     }
 }
 
-.in{
-    top: 0
-}
+
 
 
 
 .posts-wrap{
 
-
+.in{
+    top: 0
+}
     .image-container{
     height: 180px;
     overflow: hidden;
@@ -116,6 +242,7 @@
         text-overflow: ellipsis;
         white-space: nowrap;
         overflow: hidden;
+        color: #4A4A4A;
 
         &:hover{
             text-decoration: none;
@@ -143,16 +270,6 @@
 
 
 .site-container {
-    // background-color: white;
-    // background: url(http://danikakayelle.com/wp-content/uploads/2015/02/dkayelle2.png), url(https://newevolutiondesigns.com/images/freebies/colorful-background-13.jpg);
-    // background-attachment: fixed, fixed;
-    // background-size: 567px, cover;
-    // background-position: top center, center;
-    // background-repeat: no-repeat;
-    // padding-bottom: 4em;
-    // width: 100vw;
-    // height: 100vh;
-
       // Fixed-position background image
   &::before {
     content: ' ';
@@ -162,16 +279,50 @@
     top: 0;
     left: 0;
     background-color: white;
-    background-size: 567px, cover;
+    background-size: 434px, cover;
     background-position: top center, center;
     background-repeat: no-repeat;
-    background-image: url(http://danikakayelle.com/wp-content/uploads/2015/02/dkayelle2.png), url(https://newevolutiondesigns.com/images/freebies/colorful-background-13.jpg);
+    background-image: url(http://danikakayelle.com/wp-content/uploads/2015/02/dkayelle2.png),
+     url(https://newevolutiondesigns.com/images/freebies/colorful-background-13.jpg);
+
+    background-image: url(http://danikakayelle.com/wp-content/uploads/2015/02/dkayelle2.png),
+     url(http://images.freecreatives.com/wp-content/uploads/2015/03/Huge-Backgrounds-26.jpg);
+
+     background-image: url(http://danikakayelle.com/wp-content/uploads/2015/02/dkayelle2.png),
+     url(http://argushd.com/wp-content/uploads/2016/03/Abstract-Backgrounds-Website-Background-Blue-Wallpaper-1920x1080.jpg);
+
+    background-image: url(http://danikakayelle.com/wp-content/uploads/2015/02/dkayelle2.png),
+     url(http://www.incomeactivator.com/images/freebg1.jpg);
+
+    background-image: url(http://danikakayelle.com/wp-content/uploads/2015/02/dkayelle2.png),
+     url(http://www.walldevil.com/wallpapers/a63/beautiful-background-sphere-website-backgrounds-different.jpg);
+
+     background-image: url(http://danikakayelle.com/wp-content/uploads/2015/02/dkayelle2.png),
+     url(http://www.munciehighstreet.com/wp-content/uploads/2014/05/website-background-wincustomize-explore-clouds-284048.jpg);
+
+
     will-change: transform; // creates a new paint layer
     z-index: -1;
   }
 
-      .container{
-    width: 100%;
+    .container{
+        width: 100%;
+        padding: 0;
+        top: 93px;
+        position: relative;
+    }
+
+  @media (max-width: 768px) {
+    &::before{
+        background-size: 90%, cover;
+    }
+
+    .container{
+        top: 48px;
+    }
+
+
+      
   }
 
 
@@ -186,19 +337,20 @@
 
 .navbar-default {
     background-color: #3AC2E9;
-    border: none;
+    border: none !important;
     position: fixed;
     width: 100%;
     bottom: 0;
     margin-bottom: 0;
         z-index: 9999;
     border-radius: 0;
-    height: 13vh;
+    height: 8vh;
     // background: url(http://danikakayelle.com/wp-content/uploads/2015/02/dkayelle2.png), #3AC2E9 no-repeat center;
     background: #3AC2E9 ;
     background-repeat: no-repeat;
     background-size: 282px;
     background-position: left center;
+
 
     .navbar-nav{
 		margin: 0 auto;
@@ -207,6 +359,7 @@
 		float: none;
 		display: flex;
 		justify-content: space-around;
+        align-items: center;
 
 
 		li{
@@ -215,8 +368,8 @@
 				color: #FFF;
 			    text-transform: capitalize;
 			    font-family: 'Josefin Sans';
-			    font-size: 38px;
-			    padding: 4vh;
+			    font-size: 30px;
+			    padding: 2vh;
 			    font-weight: lighter;
 
 				&:hover{
@@ -225,6 +378,19 @@
 			}
 		}
     }
+
+   @media (max-width: 768px){
+
+        .navbar-nav{
+            li{
+
+                a{
+                    font-size: 24px;
+                }
+            }
+        }
+
+   }
 
 }
 
@@ -239,55 +405,7 @@
 }
 
 
-    	.blog-show-title {
-    text-align: center;
-    font-weight: 100;
-    font-family: tangerine;
-    font-size: 55px;
-    border-bottom: 1px solid #3AC2E9 !important;
-    display: inline-table;
-    margin: -3px auto 10px;
-}
 
-.blog-show-image{
-	float: left;
-    margin-right: 30px;
-    margin-bottom: 20px;
-    width: 50%;
-}
-
-#comment_name{
-	    border-radius: 4px;
-    outline: none;
-    height: 50px;
-    width: 50%;
-    border: 1px solid #BDBDBD;
-    padding-left: 12px;
-}
-#comment_body{
-	border-radius: 4px;
-    outline: none;
-    height: 300px;
-    width: 50%;
-    border: 1px solid #BDBDBD;
-    padding-left: 12px;
-}
-
-#submit-comment{
-	    border-radius: 4px;
-    outline: none;
-    height: 53px;
-    color: white;
-    width: 210px;
-    border: 1px solid #3AC2E9;
-    background: #3AC2E9;
-    font-size: 26px;
-    font-weight: 100;
-}
-
-.comment-form{
-	text-align: center;
-}
 
 .posts-container{
     // background-color: rgba(255, 255, 255, 0.1);
@@ -405,6 +523,8 @@
 		.l{font-size: 1.8em;}
 	}
 }
+
+
 
 
 header{

@@ -9,6 +9,9 @@ if ($('#basic').length) {
 	//   Basic Navigation
 	// -------------------------------------------------------------
 	(function () {
+
+		var mobile = !/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) && $(window).width() > 1000;
+
 		$('body').addClass('no-scroll')
 		var $frame  = $('#basic');
 		var $slidee = $frame.children('ul').eq(0);
@@ -27,13 +30,16 @@ if ($('#basic').length) {
 			scrollBy: 1,
 			pagesBar: $wrap.find('.pages'),
 			activatePageOn: 'click',
-			speed: 900,
+			speed: 2000,
 			elasticBounds: 1,
 			easing: 'easeOutExpo',
 			dragHandle: 1,
 			dynamicHandle: 1,
 			clickBar: 1,
 			forceCentered: 1,
+			scrollTrap: true,
+			activateMiddle: 1,
+			keyboardNavBy: 'pages',
 
 		    // Buttons
 			forward: $wrap.find('.forward'),
@@ -46,28 +52,92 @@ if ($('#basic').length) {
 
 		var sly = new Sly('#basic', options).init();
 
-	    $('#basic').on('mousewheel', function(event) {
+	 //    $('#basic').on('mousewheel', function(event) {
 	    		
-	    	event.preventDefault()
+	 //    	event.preventDefault()
+
+		// })
+
+		// function handleKeyDown(e) {
+		// 	var ctrlPressed = 0;
+		// 	var altPressed = 0;
+		// 	var shiftPressed= 0;
+
+		// 	var evt = (e==null ? event:e);
+
+		// 	shiftPressed = evt.shiftKey;
+		// 	altPressed   = evt.altKey;
+		// 	ctrlPressed  = evt.ctrlKey;
+		// 	self.status = ""
+		// 	+  "shiftKey=" + shiftPressed 
+		// 	+", altKey="   + altPressed 
+		// 	+", ctrlKey="  + ctrlPressed 
+
+		// 	if ((shiftPressed || altPressed || ctrlPressed) && (evt.keyCode == 81)) {
+
+		// 		console.log('hello')
+		// 		return true;
+		// 	}
+		// }
+
+		// 	document.onkeydown = handleKeyDown;
+
+
+		// $(document).keydown(function( event ) {
+
+		//    event.preventDefault();
+		//   if ( event.which == 39 ) {
+		//    sly.next()
+		//   }else if(event.which == 37) {
+		//    sly.prev()
+		//   }else if(event.which == 40) {
+		//    sly.toStart()
+		//   }else if(event.which == 38) {
+		//    sly.toEnd()
+		//   }
+
+		// });
+
+		sly.on('change', function () {
+
+			var currentBlog = sly.getIndex($('li.active'));
+			var loadedBlogs = this.items.length;
+			var loadedBlogsMod = this.items.length - 4;
+			var totalBlogs = $('.frame').data('count');
+			var totalPages = sly.pages.length - 2
+			var currentPage = sly.rel.activePage
+
+
+			if (currentPage >= totalPages && totalBlogs > loadedBlogs) {
+
+				    	var href = $('.next_page').attr('href');
+
+						$.get(href, function(data){
+							var html = $(data).find('.frame ul li')
+							var paginate = $(data).find('.pagination').html()
+
+							html.each(function(){
+								sly.add('<li>' + $(this).html() + '</li>');
+							})
+							$('.pagination').html(paginate)
+						});
+
+
+			} else {
+
+			}
 
 		})
 
+		// Add item
+		// $('.add').on('click', function () {
+		// 	sly.add('<li>' + '$slidee.children().length' + '</li>');
+		// });
 
-		$(document).keydown(function( event ) {
-
-		   event.preventDefault();
-		  if ( event.which == 39 ) {
-		   sly.next()
-		  }else if(event.which == 37) {
-		   sly.prev()
-		  }else if(event.which == 40) {
-		   sly.toStart()
-		  }else if(event.which == 38) {
-		   sly.toEnd()
-		  }
-
-		});
-
+		// Remove item
+		// $('.remove').on('click', function () {
+		// 	$frame.sly('remove', -1);
+		// });
 
 
 

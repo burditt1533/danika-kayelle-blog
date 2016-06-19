@@ -1,6 +1,11 @@
 <div class="show-wrap">
 <p id="notice"><%= notice %></p>
 
+
+	<h3 class="blog-show-title"><%= @blog.title %></h3>
+
+
+
 <% if @blog.static_image.present? %>
 
     <%= image_tag @blog.static_image, class: 'blog-show-image' %>
@@ -13,45 +18,43 @@
     </div>
 <% end %> 
 
-<%= image_tag @blog.image.url(:medium), class: 'blog-show-image' %>
-
-  
-  
-
-
 <div class="show-content">
-
-<div style="text-align: center;">
-<h3 class="blog-show-title"><%= @blog.title %></h3>
-</div>
   <%= simple_format(@blog.content.html_safe) %>
 </div>
-
+<hr>
+	<h4>Tags</h4>
 <p class="tags">
-	Tags: <%= raw @blog.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')%>
+	 <%= raw @blog.tag_list.map { |t| link_to t, tag_path(t) }.join(' ')%>
 </p>
 
 
 <%= link_to like_blog_path(@blog), method: :put, class: "btn btn-default" do %>
 
-	<span class="glyphicon glyphicon-heart">
+	<span><i class="fa fa-heart" aria-hidden="true" style="color: red"></i>
 		<%= @blog.get_upvotes.size %>
 	</span>
 
 <% end %> 
-<%= link_to 'Edit', edit_blog_path(@blog) %> |
-<%= link_to 'Delete', blog_path(@blog), method: :delete, data: { confirm: 'Are you sure?' } %> |
-<%= link_to 'Back', blogs_path %>
+
+<div class="edit-blog">
+	<%= link_to 'Edit', edit_blog_path(@blog) %> |
+	<%= link_to 'Delete', blog_path(@blog), method: :delete, data: { confirm: 'Are you sure?' } %> |
+	<%= link_to 'Back', blogs_path %>
+</div>
 
 <hr>
 
 
 	<div class="comment-form">
-		<h2><%= @blog.comments.count %> Comments</h2>
+
+		<h2 style="text-align: center;"><%= pluralize(@blog.comments.count, 'Comment') %></h2>
 		<%= render @blog.comments %>
 
-		<h3>Leave a Comment:</h3>
-		<%= render "comments/form" %>
+		<div class="leave-comment">
+
+			<h3>Leave a Comment:</h3>
+			<%= render "comments/form" %>
+		</div>
 	</div>
 
 </div>

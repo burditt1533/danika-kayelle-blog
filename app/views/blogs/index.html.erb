@@ -4,7 +4,7 @@
 
      
 
-      <div class="frame" id="basic" style="overflow: hidden;">
+      <div class="frame" id="basic" style="overflow: hidden;" data-count="<%= @blogs.count %>">
         <ul class="clearfix" style="transform: translateZ(0px) translateX(-684px); width: 6840px;">
 
         <% @blogs.each do |blog| %>
@@ -36,8 +36,8 @@
                   <% end %> 
 
 
-              <div class="col-sm-12">
-                <div class="col-sm-12" style="text-align: center;">
+              <div class="col-xs-12">
+                <div class="col-xs-12" style="text-align: center;">
                 <%= link_to blog  do %>
                   <h3 class="blog-title"><%= blog.title %></h3>
                   <% end %> 
@@ -88,7 +88,7 @@
         
       </div>
 
-      <div class="controls center">
+      <div class="controls center hidden-xs">
 
         <span class="prev btn direction-button"><i class="fa fa-chevron-left" aria-hidden="true"></i>PREV</span>
 
@@ -115,6 +115,10 @@
         <span class="btn next">NEXT <i class="fa fa-chevron-right" aria-hidden="true"></i></span>
       </div> -->
     </div>
+
+      <div class="paginate_container" style="display: none;">
+    <%= will_paginate @blogs %>
+  </div>
 
   </div>
 
@@ -198,7 +202,7 @@
   </div>
 
 
-  <div class="paginate_container" style="display: none;">
+  <div class="paginate_container" style="display: block;">
     <%= will_paginate @blogs %>
   </div>
 </div>

@@ -59,6 +59,8 @@ gem 'will_paginate'
 
 gem "font-awesome-rails"
 
+gem "instagram"
+
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

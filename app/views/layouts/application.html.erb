@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
 	<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	  <title>Webblog</title>
 	  <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>	 
 
+	
 	  <%= csrf_meta_tags %>
 	</head>
 	<body>
@@ -12,32 +14,45 @@
 			<p class="notice"><%= notice %></p>
 			<p class="alert"><%= alert %></p>
 
-			<div class="container" style="padding: 0;top: 93px;position: relative;">
+			<div class="container">
 			<!-- <header></header> -->
 
 
 			<nav class="navbar navbar-default">
 			  <div class="container-fluid" style="padding: 0">
+
+
 			    <!-- Brand and toggle get grouped for better mobile display -->
-			    <div class="scrollbar">
-        <div class="handle" style="transform: translateZ(0px) translateX(114px); width: 190px;">
-          <div class="mousearea"></div>
-        </div>
-      </div>
+
+			    <% if controller.controller_name == 'blogs' && controller.action_name == 'index' %>
+				<div class="scrollbar">
+					<div class="handle" style="transform: translateZ(0px) translateX(114px); width: 190px;">
+						<div class="mousearea"></div>
+					</div>
+				</div>
+				<% end %>
 			    <div class="navbar-header">
 			<span class="scroller"></span>
 
-			      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+			     <!--  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
 			        <span class="sr-only">Toggle navigation</span>
 			        <span class="icon-bar"></span>
 			        <span class="icon-bar"></span>
 			        <span class="icon-bar"></span>
-			      </button>
+			      </button> -->
 			    </div>
 
+			    <% if controller.controller_name == 'blogs' && controller.action_name == 'show' && false %>
+			  <div class="back-blog">
+			 	<i class="fa fa-chevron-left" aria-hidden="true"></i>
+			 </div>
+			 <% end %>
+
 			    <!-- Collect the nav links, forms, and other content for toggling -->
-			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			    <div class=" " id="bs-example-navbar-collapse-1">
+
 			      <ul class="nav navbar-nav">
+
 			      <%= content_tag :li do %>
 			      	<%= link_to(photos_path)  do %><i class="fa fa-camera" aria-hidden="true"></i><% end %>
 
@@ -52,7 +67,7 @@
 			      <% end %>
 
 			      <%= content_tag :li do %>
-			      	<%= link_to("")  do %><i class="fa fa-comments-o" aria-hidden="true"></i><% end %>
+			      	<%= link_to("")  do %><i class="fa fa-shopping-bag" aria-hidden="true"></i><% end %>
 			      <% end %>
 
 			      <%= content_tag :li do %>
@@ -76,6 +91,7 @@
 		</div>
 
  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+
  <!-- <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script> -->
 	</body>
 </html>
