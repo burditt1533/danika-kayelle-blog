@@ -4,6 +4,7 @@ Webblog::Application.routes.draw do
     resources :comments
     member do
       put 'like', to: 'blogs#upvote'
+      post 'love', to: 'blogs#love'
     end
     
   end

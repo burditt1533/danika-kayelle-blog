@@ -2,6 +2,21 @@
 
 $(function(){
 
+	$('.loves').click(function(e){
+		e.preventDefault()
+
+		var id = $('.show-wrap').data('id')
+		var url = '/blogs/' + id + '/love'
+
+		$.ajax({
+			url: url,
+			type: 'POST', 
+			success: function(data){
+				$('[data-behavior="likes-counter"]').html(data)
+			}
+		})
+	})
+
 	
 	$('.image-container').mouseover(function(){
 		$(this).find('.image-overlay').addClass('in')

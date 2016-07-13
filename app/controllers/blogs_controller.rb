@@ -88,6 +88,17 @@ class BlogsController < ApplicationController
     redirect_to :back
   end
 
+  def love
+    @blog = Blog.find(params[:id])
+
+    @blog.increment(:likes)
+
+    @blog.update(likes: @blog.likes)
+
+    render json: @blog.likes
+    
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_blog
