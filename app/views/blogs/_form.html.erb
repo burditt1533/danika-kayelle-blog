@@ -12,20 +12,22 @@
   <% end %>
 
   <div class="title-field">
+    <%= f.text_field :title %>
+  </div>
+  
+  <div class="title-field">
     <%= f.file_field :image %>
+  </div>
+
+
+
+  <div class="field">
+    <%= f.text_area :content, id: 'tinymce4', :class => "tinymce", rel: "tinymce", :rows => 40, :cols => 70 %>
   </div>
 
   <div class="tags">
     <%= f.label :tag_list, "Tags (separated by commas)" %><br />
     <%= f.text_field :tag_list %>
-  </div>
-
-  <div class="title-field">
-    <%= f.text_field :title %>
-  </div>
-
-  <div class="field">
-    <%= f.text_area :content, id: 'tinymce4', :class => "tinymce", rel: "tinymce", :rows => 40, :cols => 70 %>
   </div>
 
   <div class="actions">

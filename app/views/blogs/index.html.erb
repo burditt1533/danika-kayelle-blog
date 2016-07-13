@@ -28,9 +28,15 @@
                   <% elsif blog.static_image == "" && blog.image.url(:large) == ""  %>
 
                   <% else %> 
-                    <div class="col-xs-12">
+                    <div class="col-xs-12 image-container">
                       <%= link_to blog  do %>
                         <%= image_tag blog.image.url(:large), class: 'post-image', style: 'width: 100%' %>
+                        <div class="image-overlay">
+                          <span class="share-icon"><i class="fa fa-instagram" aria-hidden="true"></i></span>
+                             <span class="share-icon"><i class="fa fa-twitter" aria-hidden="true"></i></span>
+                             <span class="share-icon"><i class="fa fa-facebook-official" aria-hidden="true"></i></span>
+                          </span>
+                        </div>
                       <% end %> 
                     </div>
                   <% end %> 
@@ -50,8 +56,14 @@
 
             <% if user_signed_in? or true%>
                 <div class="col-xs-12" style="text-align: right;">
-                  <%= link_to blog  do %>
-                    <p class="read-more">Read More</p>
+                  <% if user_signed_in? %>
+                    <%= link_to edit_blog_path(blog)  do %>
+                      <p class="read-more">Edit</p>
+                    <% end %>
+                  <% else %>
+                    <%= link_to blog  do %>
+                      <p class="read-more">Read More...</p>
+                    <% end %>
                   <% end %>
 
                   
@@ -166,9 +178,16 @@
 
     <% if user_signed_in? or true%>
         <div class="col-xs-12" style="text-align: right;">
+
+        <% if user_signed_in? %>
+          <%= link_to blog  do %>
+            <p class="read-more">Edit</p>
+          <% end %>
+        <% else %>
           <%= link_to blog  do %>
             <p class="read-more">Read More...</p>
           <% end %>
+        <% end %>
 
           
 
