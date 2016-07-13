@@ -8,7 +8,7 @@ class BlogsController < ApplicationController
   def index
     # require 'json'
     if params[:tag]
-      @blogs = Blog.all.tagged_with(params[:tag])
+      @blogs = Blog.all.tagged_with(params[:tag]).paginate(:page => params[:page]).per_page(20).order('created_at DESC')
     else
       @blogs = Blog.paginate(:page => params[:page]).per_page(20).order('created_at DESC')
       @docs = Nokogiri::XML(File.open("app/assets/javascripts/danika_blog.xml"))
