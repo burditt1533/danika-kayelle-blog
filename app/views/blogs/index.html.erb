@@ -55,7 +55,7 @@
               </div>
 
                 <div class="col-xs-12 read-more-container" >
-                  <% if user_signed_in? && current_user.email = "danika@test.com" %>
+                  <% if user_signed_in? %>
                   <%= user_session %>
                     <%= link_to edit_blog_path(blog)  do %>
                       <p class="read-more">Edit</p>
