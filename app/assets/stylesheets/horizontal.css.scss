@@ -1,4 +1,5 @@
 
+
 /* Example wrapper */
 .wrap {
 	position: relative;
@@ -7,9 +8,12 @@
 
 /* Frame */
 .frame {
-	height: 480px;
+	height: 347px;
 	line-height: 250px;
 	overflow: hidden;
+	@media (max-width: 768px){
+		height: 60vh;		
+	}
 }
 .frame ul {
 	list-style: none;
@@ -20,15 +24,20 @@
 }
 .frame ul li {
 	float: left;
-	width: 450px;
+	width: 320px;
 	height: 100%;
 	margin: 0 190px 0 0;
-	padding: 20px 0;
+	padding: 13px 0 0px 0;
 	background: #3AC2E9;
 	color: #000;
 	text-align: center;
 	cursor: pointer;
 	border-radius: 4px;
+
+	.posts-wrap{
+		padding: 0;
+		height: 100%;
+	}
 }
 .frame ul li.active {
 	color: #fff;
@@ -72,6 +81,7 @@
 	padding: 0;
 	text-align: center;
 	display: inline-block;
+	width: 50%;
 }
 .pages li {
 	display: inline-block;

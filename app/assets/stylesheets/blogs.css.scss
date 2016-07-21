@@ -15,6 +15,18 @@
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
 }
 
+.notice{
+    background: rgba(83, 212, 83, 0.96);
+    color: white;
+    text-align: center;
+    padding: 12px 0;
+    position: absolute;
+    width: 100%;
+    font-size: 15px;
+    box-shadow: 0px 1px 18px 1px rgba(0, 0, 0, 0.66);
+    display: none;
+}
+
 .scroll-container{
 	overflow: hidden;
 }
@@ -153,7 +165,7 @@
 .leave-comment{
 
     #comment_name{
-            border-radius: 4px;
+        border-radius: 4px;
         outline: none;
         height: 50px;
         width: 80%;
@@ -260,9 +272,8 @@
     top: 0
 }
     .image-container{
-    height: 180px;
+    height: 125px;
     overflow: hidden;
-    margin-bottom: 10px;
     }
 
     a{
@@ -285,13 +296,19 @@
     display: none;
   }
 
+  .read-more-container{
+    text-align: right;
+    position: absolute;
+    bottom: 11px;
+
   .read-more{
         display: inline-block;
         border: 1px solid white;
-        padding: 11px 26px;
+        padding: 5px 20px;
         position: relative;
         border-radius: 2px;
         color: white;
+        margin-bottom: 0;
 
         &:hover{
             // border: 1px solid red;
@@ -300,10 +317,14 @@
         }
     }
 
+  }
+
+
     .blog-title{
         font-family: tangerine;
-        font-size: 41px;
+        font-size: 31px;
         margin-top: 7px;
+        margin-bottom: 0;
         text-overflow: ellipsis;
         white-space: nowrap;
         overflow: hidden;
@@ -317,10 +338,10 @@
     .blog-content{
         padding: 0;
         font-family: roboto;
-        font-weight: 400;
+        font-weight: 300;
         text-align: left;
-        font-size: 15px;
-        line-height: 25px;
+        font-size: 13px;
+        line-height: 20px;
         color: #4A4A4A;
     }
 
@@ -397,7 +418,52 @@
     
 }
 
+.nav-up{
+    transform: translateY(-63px);
+}
 
+.nav-bottom{
+    text-align: center;
+    .logout-link{
+        border-radius: 4px;
+        padding: 5px 10px;
+        background: #c10000;
+        position: relative;
+        top: 13px;
+
+        &:hover{
+            background: #920202;
+        }
+
+        a{
+            color: white;
+
+            &:hover{
+                text-decoration: none;
+            }
+        }
+    }
+    .login-inputs{
+        border-radius: 4px;
+        outline: none;
+        height: 32px;
+        width: 20%;
+        border: 1px solid #BDBDBD;
+        padding-left: 12px;
+        margin-top: 14px;
+    }
+    .submit-log-in{
+        border-radius: 4px;
+        background: white;
+        outline: none;
+        border: 1px solid gray;
+        padding: 6px 13px;
+
+        &:active{
+            background: #c3c3c3;
+        }
+    }
+}
 
 
 .navbar-default {
@@ -405,26 +471,45 @@
     border: none !important;
     position: fixed;
     width: 100%;
-    bottom: 0;
+    bottom: -63px;
     margin-bottom: 0;
-        z-index: 9999;
+    z-index: 9999;
     border-radius: 0;
-    height: 8vh;
+    height: 126px;
     // background: url(http://danikakayelle.com/wp-content/uploads/2015/02/dkayelle2.png), #3AC2E9 no-repeat center;
     background: #3AC2E9 ;
     background-repeat: no-repeat;
     background-size: 282px;
     background-position: left center;
+    transition: all 300ms;
 
+    .up-trigger{
+        position: absolute;
+        font-size: 25px;
+        color: white;
+        padding: 16px;
+        border-right: 1px solid #35b5da;
+        cursor: pointer;
+
+        &:hover{
+            color: red;
+        }
+
+        @media (max-width: 768px) {
+                display: none;
+        }
+    }
 
     .navbar-nav{
-		margin: 0 auto;
-		width: 100%;
-		max-width: 741px;
-		float: none;
-		display: flex;
-		justify-content: space-around;
+        margin: 0 auto;
+        width: 100%;
+        max-width: 741px;
+        float: none;
+        display: flex;
+        justify-content: space-around;
         align-items: center;
+        border-bottom: 2px solid #31aed2;
+
 
 
 		li{

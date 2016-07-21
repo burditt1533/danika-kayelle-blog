@@ -98,13 +98,13 @@ if ($('#basic').length) {
 
 		// });
 
-		sly.on('change', function () {
+		sly.on('active', function () {
 
 			var currentBlog = sly.getIndex($('li.active'));
 			var loadedBlogs = this.items.length;
 			var loadedBlogsMod = this.items.length - 4;
 			var totalBlogs = $('.frame').data('count');
-			var totalPages = sly.pages.length - 2
+			var totalPages = sly.pages.length - 3
 			var currentPage = sly.rel.activePage
 
 

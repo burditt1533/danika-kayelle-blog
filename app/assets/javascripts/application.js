@@ -24,6 +24,30 @@
 
 
 $("document:ready", function() {
+    $('[data-behavior=up-trigger]').click(function(){
+
+        $('.navbar-default').toggleClass('nav-up')
+
+        if ($('.navbar-default').hasClass('nav-up')) {
+            $('.up-trigger').html('<i class="fa fa-chevron-down" aria-hidden="true"></i>')
+        } else {
+            $('.up-trigger').html('<i class="fa fa-chevron-up" aria-hidden="true"></i>')
+
+        }
+
+
+
+        // if ($(this).hasClass('nav-up')) {
+        //     $('.navbar-default').toggleClass('navbar-up')
+        //     $('.navbar-default').animate({transform:'translateY(-100px)'}, 300)
+        //     console.log('up we go')
+        // }else{
+        //     $('.navbar-default').animate({transform:'translateY(0px)'}, 300)
+        //     console.log('down we go')
+        // }        
+    })
+
+
   $("[rel=tinymce]").tinymce({
     theme: "modern",
     toolbar: "bold,italic,underline,|,bullist,numlist,outdent,indent,|,undo,redo,|,pastetext,pasteword,selectall,|,uploadimage",

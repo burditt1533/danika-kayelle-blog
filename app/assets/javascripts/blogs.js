@@ -18,12 +18,12 @@ $(function(){
 	})
 
 	
-	$('.image-container').mouseover(function(){
-		$(this).find('.image-overlay').addClass('in')
+	$('.image-container').on('mouseover', function(){
+		// $(this).find('.image-overlay').addClass('in')
 	})
 
-	$('.image-container').mouseout(function(){
-		$(this).find('.image-overlay').removeClass('in')
+	$('.image-container').on('mouseout', function(){
+		// $(this).find('.image-overlay').removeClass('in')
 	})
 
 

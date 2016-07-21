@@ -3,16 +3,19 @@
 	<head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	  <title>Webblog</title>
-	  <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>	 
+	  <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => false %>	 
 
 	
 	  <%= csrf_meta_tags %>
 	</head>
-	<body>
+	<body data-no-turbolink>
 
 		<div class="site-container">
-			<p class="notice"><%= notice %></p>
-			<p class="alert"><%= alert %></p>
+			<div class="notice">
+				<%= notice %>
+				<%= alert %>
+			</div>
+			<!-- <p class="alert"></p> -->
 
 			<div class="container">
 			<!-- <header></header> -->
@@ -50,6 +53,9 @@
 
 			    <!-- Collect the nav links, forms, and other content for toggling -->
 			    <div class=" " id="bs-example-navbar-collapse-1">
+			    	<div class="up-trigger" data-behavior="up-trigger">
+			    		<i class="fa fa-chevron-up" aria-hidden="true"></i>
+			    	</div>
 
 			      <ul class="nav navbar-nav">
 
@@ -76,6 +82,34 @@
 
 			       
 			      </ul>
+
+			      <div class="nav-bottom">
+			      	
+				    <% if user_signed_in? %>
+				    	<span class="logout-link">
+				    		<%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+				    	</span>	   
+
+				    <% else %>
+
+				    	
+
+						<% if true %>
+
+					      	<%= form_for(:user, :url => session_path(:user)) do |f| %>
+							  <%= f.text_field :email, class: 'login-inputs' %>
+							  <%= f.password_field :password, class: 'login-inputs' %>
+							  <!-- <%= f.check_box :remember_me %> -->
+							  <!-- <%= f.label :remember_me %> -->
+							  <%= f.submit 'Sign in', class: 'submit-log-in' %>
+							  <%= link_to "Forgot your password?", new_password_path(:user) %>
+							<% end %>
+						<% end %>
+
+					<% end -%>
+			      </div>
+
+
 			      
 			    </div><!-- /.navbar-collapse -->
 			  </div><!-- /.container-fluid -->
@@ -92,6 +126,6 @@
 
  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 
- <!-- <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script> -->
+
 	</body>
 </html>
